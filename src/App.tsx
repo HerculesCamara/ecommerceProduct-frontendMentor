@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Carroussel } from "./components/carroussel";
+import { HamburguerMenu } from "./components/HamburguerMenu";
+import { Header } from "./components/Header";
+import { ProductInfo } from "./components/ProductInfo";
+import { HamburguerMenuProvider } from "./hooks/useHamburguerMenu";
+import { GlobalStyle } from "./styles/global";
 
-function App() {
+export function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HamburguerMenuProvider>
+      <HamburguerMenu />
+      <Header />
+      <Carroussel />
+      <ProductInfo />
+      <GlobalStyle />
+    </HamburguerMenuProvider>
   );
 }
-
-export default App;
